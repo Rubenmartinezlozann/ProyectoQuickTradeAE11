@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>misProductos</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    
+        <ion-list>
+      <ion-item>
+        <ion-label>categoria</ion-label>
+        <ion-select (ionChange)="onChange($event)" name="form.categoria" [interfaceOptions]="customPopoverOptions"
+          interface="popover" placeholder="Select One" [(ngModel)] = "categoriaFiltro">
+          <ion-select-option value="1">tecnología</ion-select-option>
+          <ion-select-option value="2">hogar</ion-select-option>
+          <ion-select-option value="3">inmobiliaria</ion-select-option>
+          <ion-select-option value="4">motor</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+        <ion-card *ngFor="let element of Productos">
+            <ion-card-header>
+                <ion-card-title>
+                    {{element.Nombre}}
+                </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-label>Descripcion</ion-label>
+                {{element.Descripcion}}
+                <ion-label>Categoria</ion-label>
+                {{element.Categoria}}
+                <ion-label>Precio</ion-label>
+                {{element.Precio}}
+                <ion-button shape="round" color="success" [routerLink]="['/editar-producto/',claves[element.Id]]" routerDirection="forward">Editar</ion-button>
+                <ion-button shape="round" color="success" (click)="Borrar(claves[element.id])" routerDirection="forward">Eliminar</ion-button>
+            </ion-card-content>
+        </ion-card>
+    
+
+</ion-content>

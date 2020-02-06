@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                {{Producto.Nombre}}
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-label>Descripcion:</ion-label>
+            {{Producto.Descripcion}}
+            <ion-label>Categoria:</ion-label>
+            {{Producto.Categoria}}
+            <ion-label>Precio:</ion-label>
+            {{Producto.Precio}}
+            <ion-label>Estado:</ion-label>
+            {{Producto.Estado}}
+            <ion-label>MetrosCuadrados:</ion-label>
+            {{Producto.MetrosCuadrados}}
+            <ion-label>NumeroDeBanyos:</ion-label>
+            {{Producto.NumeroDeBanyos}}
+            <ion-label>NumeroDeHabitaciones:</ion-label>
+            {{Producto.NumeroDeHabitaciones}}
+            <ion-label>Localidad:</ion-label>
+            {{Producto.Localidad}}
+            <ion-label>Vehiculo:</ion-label>
+            {{Producto.Vehiculo}}
+            <ion-label>Km:</ion-label>
+            {{Producto.Km}}
+            <ion-label>Anyo:</ion-label>
+            {{Producto.Anyo}}
+            <ion-button shape="round" color="success" routerLink="/ver-productos/" routerDirection="forward">Volver</ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

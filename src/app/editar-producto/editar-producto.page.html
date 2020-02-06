@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Editar producto</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                {{Producto.Nombre}}
+            </ion-card-title>
+            <ion-input type="text" [(ngModel)]="Nombre"></ion-input>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-label>Descripcion:</ion-label>
+            <ion-input type="text" [(ngModel)]="Descripcion" value="Producto.Descripcion"></ion-input>
+            <ion-label>Categoria:</ion-label>
+            <ion-input type="text" [(ngModel)]="Categoria" value="Producto.Categoria"></ion-input>
+            <ion-label>Precio:</ion-label>
+            <ion-input type="text" [(ngModel)]="Precio" value="Producto.Precio"></ion-input>}
+            <ion-label>Estado:</ion-label>
+            <ion-input type="text" [(ngModel)]="Estado" value="Producto.Estado"></ion-input>
+            <ion-label>MetrosCuadrados:</ion-label>
+            <ion-input type="text" [(ngModel)]="MetrosCuadrados" value="Producto.MetrosCuadrados"></ion-input>
+            <ion-label>NumeroDeBanyos:</ion-label>
+            <ion-input type="text" [(ngModel)]="NumeroDeBanyos" value="Producto.NumeroDeBanyos"></ion-input>
+            <ion-label>NumeroDeHabitaciones:</ion-label>
+            <ion-input type="text" [(ngModel)]="NumeroDeHabitaciones" value="Producto.NumeroDeHabitaciones"></ion-input>
+            <ion-label>Localidad:</ion-label>
+            <ion-input type="text" [(ngModel)]="Localidad" value="Producto.Localidad"></ion-input>
+            <ion-label>Vehiculo:</ion-label>
+            <ion-input type="text" [(ngModel)]="Vehiculo" value="Producto.Vehiculo"></ion-input>
+            <ion-label>Km:</ion-label>
+            <ion-input type="text" [(ngModel)]="Km" value="Producto.Km"></ion-input>
+            <ion-label>Anyo:</ion-label>
+            <ion-input type="text" [(ngModel)]="Anyo" value="Producto.Anyo"></ion-input>
+            <ion-button shape="round" color="success" routerLink="/mis-productos/" routerDirection="forward">Volver</ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

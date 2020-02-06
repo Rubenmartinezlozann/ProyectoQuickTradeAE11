@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>insertarProducto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label position="floating">{{TextoNombre}}</ion-label>
+            <ion-input type="text" [(ngModel)]="Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">{{TextoDescripcion}}</ion-label>
+            <ion-input type="text" [(ngModel)]="Descripcion"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>{{TextoCategoria}}</ion-label>
+            <ion-select placeholder="Selecciona una categoría" #categoria (ionChange)="CambiarCategoria(categoria.value)" name="form.categoria"
+                        interface="popover">
+                <ion-select-option value=1>Tecnologia</ion-select-option>
+                <ion-select-option value=2>Hogar</ion-select-option>
+                <ion-select-option value=3>Inmobiliaria</ion-select-option>
+                <ion-select-option value=4>Motor</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <div *ngIf="Categoria== 4">
+            <ion-item>
+                <ion-label>{{TextoVehiculo}}</ion-label>
+                <ion-select placeholder="Selecciona un vehiculo" [(ngModel)]="Vehiculo">
+                    <ion-select-option value="coche">Coche</ion-select-option>
+                    <ion-select-option value="moto">Moto</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">{{TextoKm}}</ion-label>
+                <ion-input type="number" value="0" [(ngModel)]="km"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">{{TextoAnyo}}</ion-label>
+                <ion-input type="number" value="0" [(ngModel)]="Anyo"></ion-input>
+            </ion-item>
+        </div>
+        <div *ngIf="Categoria==3">
+            <ion-item>
+                <ion-label position="floating">{{TextoMetrosCuadrados}}</ion-label>
+                <ion-input type="number" value="0" [(ngModel)]="MetrosCuadrados"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">{{TextoNumeroDeBanyos}}</ion-label>
+                <ion-input type="number" value="0" [(ngModel)]="NumeroDeBanyos"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">{{TextoNumeroDeHabitaciones}}</ion-label>
+                <ion-input type="number" value="0" [(ngModel)]="NumeroDeHabitaciones"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">{{TextoLocalidad}}</ion-label>
+                <ion-input [(ngModel)]="Localidad"></ion-input>
+            </ion-item>
+        </div>
+        <div *ngIf="Categoria== 1">
+            <ion-item>
+                <ion-label>{{TextoEstado}}</ion-label>
+                <ion-select placeholder="Selecciona un estado" [(ngModel)]="Estado">
+                    <ion-select-option>Perfecto estado</ion-select-option>
+                    <ion-select-option>usado</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </div>
+        <ion-item>
+            <ion-label position="floating">{{TextoPrecio}}</ion-label>
+            <ion-input type="number" value="0" [(ngModel)]="Precio"></ion-input>
+        </ion-item>
+        <div>
+            <ion-button shape="round" color="success" (click)="GuardarProducto()">Guardar producto </ion-button>
+        </div>
+</ion-content>
